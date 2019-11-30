@@ -44,7 +44,7 @@
         <textarea name="manfaat" class="form-control" required></textarea>
       </div>
       <div class="form-group">
-        <input type="submit" class="tombol tombol-success" name="tambah" value="TAMBAH">
+        <input type="submit" class="tombol tombol-success" name="tambah" value="TAMBAH OBAT">
       </div>
     </form>
 
