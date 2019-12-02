@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home_model extends CI_Model {
+class Customer_model extends CI_Model {
 
   public function getObat($kode_obat = FALSE){
     if($kode_obat == FALSE){
