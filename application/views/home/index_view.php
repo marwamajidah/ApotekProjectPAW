@@ -24,7 +24,7 @@
         <li><a href="<?= site_url('konfirmasi');?>">KONFIRMASI PEMBELIAN</a></li>
         <li><a href="<?= site_url('cek');?>">CEK PEMBELIAN</a></li>
         <li><a href="<?= site_url('obat');?>">DAFTAR OBAT</a></li>
-        <li><a href="<?= site_url('beli');?>">BELI <span class="glyphicon glyphicon-shopping-cart"></a></li>
+        <li><a href="<?= site_url('beli');?>">BELI</a></li>
         <li></li>
       </ul>
     </div>
