@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Nov 2019 pada 21.07
+-- Waktu pembuatan: 16 Des 2019 pada 02.57
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.11
 
@@ -19,29 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `apotek`
+-- Database: `apotekpaw`
 --
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `admin`
---
-
-CREATE TABLE `admin` (
-  `id_admin` int(3) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `nama` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `admin`
---
-
-INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama`) VALUES
-(1, 'marwa', '12345', 'Marwa Majidah'),
-(2, 'admin', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -61,9 +40,24 @@ CREATE TABLE `detail_pemesanan` (
 --
 
 INSERT INTO `detail_pemesanan` (`id`, `kode_pesan`, `kode_obat`, `jumlah`) VALUES
-(25, '8QSHQCH', 'A0001', 2),
-(26, '2JFEYYX', 'A0001', 1),
-(27, 'EV8ZSYL', 'A0001', 1);
+(1, '8X60SSU', 'A0001', 1),
+(2, '8X60SSU', 'A0002', 20),
+(6, '2GH3B48', 'A0001', 26),
+(7, '2GH3B48', 'A0002', 33),
+(8, '2GH3B48', 'C0001', 13),
+(9, 'FAVEJLI', 'B0002', 30),
+(10, 'FAVEJLI', 'C0001', 25),
+(11, 'FAVEJLI', 'A0004', 30),
+(12, 'Q6X46CZ', 'A0001', 15),
+(13, 'Q6X46CZ', 'A0003', 20),
+(14, 'Q6X46CZ', 'C0001', 10),
+(15, 'UBEV4VC', 'A0001', 200),
+(16, 'UBEV4VC', 'A0002', 10),
+(18, 'S244QXZ', 'D0001', 20),
+(19, 'S244QXZ', 'A0004', 10),
+(21, 'HACW9GN', 'D0001', 5),
+(22, 'HACW9GN', 'A0001', 20),
+(24, 'SWWY31J', 'C0001', 10);
 
 -- --------------------------------------------------------
 
@@ -83,18 +77,8 @@ CREATE TABLE `keranjang` (
 --
 
 INSERT INTO `keranjang` (`id`, `kode_obat`, `jumlah`, `id_session`) VALUES
-(22, 'A0002', 20, 'aysho3ajxv6ounnldf3k9n47sr68sxlspz5aqwkx'),
-(29, 'A0002', 1, 'k2nf9so0gfadl808buoem6cel4snkkwe8ayumyxr'),
-(30, 'A0001', 1, 'k2nf9so0gfadl808buoem6cel4snkkwe8ayumyxr'),
-(31, 'A0004', 1, 'k2nf9so0gfadl808buoem6cel4snkkwe8ayumyxr'),
-(36, 'C0001', 100, 'ijbx323ih54vaafhiu6srwhsjeglzwky13dktq2a'),
-(37, 'A0001', 1, 'a9awdlrmdbqyxyfmyr6nmxrlrba79jrwj6um58w0'),
-(38, 'A0001', 2, 'bjxseqeh3haghtaspd1l2cdqmnudzlg9rrqyo9mt'),
-(39, 'A0002', 1, 'bjxseqeh3haghtaspd1l2cdqmnudzlg9rrqyo9mt'),
-(40, 'A0003', 1, 'bjxseqeh3haghtaspd1l2cdqmnudzlg9rrqyo9mt'),
-(41, 'A0001', 1, 'nzug34gyn2qllmisrso6cb33mtiz191rb291tbyn'),
-(42, 'A0002', 1, 'nzug34gyn2qllmisrso6cb33mtiz191rb291tbyn'),
-(43, 'D0001', 1, 'nzug34gyn2qllmisrso6cb33mtiz191rb291tbyn');
+(21, 'A0001', 10, 'aysho3ajxv6ounnldf3k9n47sr68sxlspz5aqwkx'),
+(22, 'A0002', 20, 'aysho3ajxv6ounnldf3k9n47sr68sxlspz5aqwkx');
 
 -- --------------------------------------------------------
 
@@ -141,8 +125,14 @@ CREATE TABLE `pembeli` (
 --
 
 INSERT INTO `pembeli` (`id`, `nama`) VALUES
-('351', 'Marwa'),
-('351508', 'Marwa');
+('21120116120002', 'Kemal Yusron Hasibuan'),
+('21120116130037', 'Ali Sajidin'),
+('21120116130065', 'Adam Maulidani'),
+('21120116140068', 'Fanny Hasbi'),
+('21120116140069', 'Fajar Nahari'),
+('21120116140070', 'Azizah Kamalia'),
+('21120116140077', 'Kelvin John'),
+('21120116140078', 'Jeremy Kharisma');
 
 -- --------------------------------------------------------
 
@@ -164,19 +154,62 @@ CREATE TABLE `pemesanan` (
 --
 
 INSERT INTO `pemesanan` (`kode_pesan`, `id_pemesan`, `harga`, `tanggal`, `status`, `konfirmasi`) VALUES
-('2JFEYYX', '351', 5000, '2019-11-18', 'B', NULL),
-('8QSHQCH', '351508', 10000, '2019-11-18', 'B', NULL),
-('EV8ZSYL', '351508', 5000, '2019-11-18', 'B', NULL);
+('2GH3B48', '21120116140070', 1136000, '2017-06-09', 'L', '2017-06-09'),
+('8X60SSU', '21120116140068', 205000, '2017-06-09', 'L', '2017-06-09'),
+('FAVEJLI', '21120116140069', 3010000, '2017-06-09', 'L', '2017-06-09'),
+('HACW9GN', '21120116140078', 160000, '2017-06-10', 'B', NULL),
+('Q6X46CZ', '21120116120002', 845000, '2017-06-10', 'L', '2017-06-10'),
+('S244QXZ', '21120116140077', 490000, '2017-06-10', 'B', NULL),
+('SWWY31J', '21120116130065', 520000, '2017-06-10', 'B', NULL),
+('UBEV4VC', '21120116130037', 1100000, '2017-06-10', 'B', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(5) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `role_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `username`, `password`, `role_id`) VALUES
+(1, 'marwa', 'marwa', 'marwa123', 2),
+(2, 'hesty', 'putrih', 'putrihesty', 2),
+(3, 'ulvia', 'ulvia', 'ulvia123', 2),
+(4, 'admin', 'admin', 'admin123', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user_role`
+--
+
+CREATE TABLE `user_role` (
+  `id` int(11) NOT NULL,
+  `role` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `user_role`
+--
+
+INSERT INTO `user_role` (`id`, `role`) VALUES
+(1, 'admin'),
+(2, 'cashier'),
+(3, 'member');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indeks untuk tabel `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Indeks untuk tabel `detail_pemesanan`
@@ -212,26 +245,44 @@ ALTER TABLE `pemesanan`
   ADD PRIMARY KEY (`kode_pesan`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- Indeks untuk tabel `user`
 --
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- Indeks untuk tabel `user_role`
 --
-ALTER TABLE `admin`
-  MODIFY `id_admin` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `user_role`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
 
 --
 -- AUTO_INCREMENT untuk tabel `detail_pemesanan`
 --
 ALTER TABLE `detail_pemesanan`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT untuk tabel `user_role`
+--
+ALTER TABLE `user_role`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
